@@ -1,12 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import {Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Paper, Typography} from "@mui/material";
+import {
+    Card,
+    CardActions,
+    CardContent,
+    CardMedia,
+    CssBaseline,
+    Grid,
+    Typography
+} from "@mui/material";
+import {AbcOutlined, MenuBookOutlined, OpenInNew, AddComment} from "@mui/icons-material";
 
 function App() {
     return (
-        <Paper>
+        <Grid className={"App"} container={false} display={"flex"} justifyContent={"center"} alignItems={"center"}>
             <CssBaseline/>
-            <Card sx={{maxWidth: 345}}>
+            <Card sx={{maxWidth: 300}} elevation={5}>
                 <CardMedia
                     aria-describedby={"https://unsplash.com/photos/xmSWVeGEnJw"}
                     component="img"
@@ -15,21 +23,23 @@ function App() {
                     image="/unsplash.jpg"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Enfrente.org
+                    <Typography gutterBottom variant="h5" component="h1">
+                        enfrente.org
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad aliquam aperiam autem beatae
-                        consequuntur delectus, dignissimos dolore fugiat ipsum maxime minima odit quidem quis recusandae
-                        rem, saepe soluta vero!
+                        Esse é um projeto de código aberto para ajudar a comunidade a se organizar e se comunicar.
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Grid container={true} display={"flex"} alignItems={"center"} justifyContent={"space-around"}>
+                        <AbcOutlined />
+                        <MenuBookOutlined></MenuBookOutlined>
+                        <OpenInNew></OpenInNew>
+                        <AddComment></AddComment>
+                    </Grid>
                 </CardActions>
             </Card>
-        </Paper>
+        </Grid>
     );
 }
 
